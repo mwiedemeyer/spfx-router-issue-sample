@@ -1,26 +1,13 @@
-## spfx-router-test
+# Repo for a sample web part for a Microsoft 365 support case
 
-This is where you include your WebPart documentation.
+This web part demonstrates the issue with hash routing in SharePoint Online.
 
-### Building the code
+Reproduce:
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
-```
+- Add the web part to a SharePoint Online page and click on one of the links
+- See the url which now contains `#/myroute/B`
+- Copy and paste the entire url into an inkognito browser tab
+- login.microsoftonline.com appears and you have to login
+- After all redirects completed, the url is blank again (without a #), then the React Hash Router appends the default route with #/ to the url.
 
-This package produces the following:
-
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
-
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO
+The original url is not preseved.
